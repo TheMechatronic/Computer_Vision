@@ -24,7 +24,7 @@ def main():
 
     while True:
         # Load the image
-        frame = cv2.imread('Object_Detection\Images\Smarties_1_good_lighting.jpg')
+        frame = cv2.imread('Template_Matching\Images\Waldo_1.jpg')
 
         # Get the set trackbar values:
         # Lower Bounds

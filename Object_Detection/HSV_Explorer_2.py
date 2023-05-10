@@ -56,16 +56,12 @@ def main():
         cv2.imshow("result_1", result_1)
         cv2.imshow("frame_2", frame_2)
         cv2.imshow("result_2", result_2)
-        
+
         # Wait for the ESC key and close all windows
         key = cv2.waitKey(1)
         if key == 27:
             break
-        elif key == 83:
-            # saveFilePath  =  asksaveasfilename(initialdir = "/",title = "Mask",filetypes = (("jpeg files","*.jpg"),("all files","*.*")), initialfile = 'mask')
-            # cv2.imwrite(saveFilePath, mask)
-            saveFilePath  =  asksaveasfilename(initialdir = "/",title = "Result",filetypes = (("jpeg files","*.jpg"),("all files","*.*")), initialfile = 'result')
-            cv2.imwrite(saveFilePath, result)
+
     return 0
 
 if __name__ == "__main__":
