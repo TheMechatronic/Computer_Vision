@@ -1,18 +1,22 @@
 import cv2    
 import numpy as np
+from tkinter import Tk
+from tkinter.filedialog import *
 
 def nothing(x):
     pass;
 
 def main():
+    Tk().withdraw
+
     # Window to set the trackbars for the mask:
     cv2.namedWindow("Tracking")
     # Lower bounds trackbars
-    cv2.createTrackbar("LH", "Tracking", 0, 255, nothing)
+    cv2.createTrackbar("LH", "Tracking", 0, 179, nothing)
     cv2.createTrackbar("LS", "Tracking", 0, 255, nothing)
     cv2.createTrackbar("LV", "Tracking", 0, 255, nothing)
     # Upper bounds trackbars
-    cv2.createTrackbar("UH", "Tracking", 255, 255, nothing)
+    cv2.createTrackbar("UH", "Tracking", 179, 179, nothing)
     cv2.createTrackbar("US", "Tracking", 255, 255, nothing)
     cv2.createTrackbar("UV", "Tracking", 255, 255, nothing)
 
@@ -20,7 +24,7 @@ def main():
 
     while True:
         # Load the image
-        frame = cv2.imread('Object_Detection\Images\M_M_good_lighting.jpg')
+        frame = cv2.imread('Object_Detection\Images\Smarties_1_good_lighting.jpg')
 
         # Convert the image to hsv
         hsv = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
@@ -54,6 +58,11 @@ def main():
         key = cv2.waitKey(1)
         if key == 27:
             break
+        elif key == 83:
+            # saveFilePath  =  asksaveasfilename(initialdir = "/",title = "Mask",filetypes = (("jpeg files","*.jpg"),("all files","*.*")), initialfile = 'mask')
+            # cv2.imwrite(saveFilePath, mask)
+            saveFilePath  =  asksaveasfilename(initialdir = "/",title = "Result",filetypes = (("jpeg files","*.jpg"),("all files","*.*")), initialfile = 'result')
+            cv2.imwrite(saveFilePath, result)
     return 0
 
 if __name__ == "__main__":
