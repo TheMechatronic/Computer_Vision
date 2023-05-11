@@ -24,7 +24,7 @@ def main():
 
     while True:
         # Load the image
-        frame = cv2.imread('Template_Matching\Images\Waldo_1.jpg')
+        frame = cv2.imread('Template_Matching\Images\Waldo_Map_1.jpg')
 
         # Convert the image to hsv
         hsv = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
